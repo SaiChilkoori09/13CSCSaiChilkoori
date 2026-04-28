@@ -14,6 +14,15 @@ import tkinter as tk
     self.weight = weight
     self.notes = notes
 
+    def to_dict(self):
+        return {
+            'name': self.name,
+            'sets': self.sets,
+            'reps': self.reps,
+            'weight': self.weight,
+            'notes': self.notes
+        }
+
 
 class PlannerApp:
     def __init__(self, root):
