@@ -1,5 +1,19 @@
-#Import GUI models
+ #Import GUI models
 import tkinter as tk
+ from random import setstate
+ from tkinter.font import names
+
+
+ class Excercise:
+
+
+    def __init__(self, name, sets, reps. weight, notes=""):
+    self.name = names
+    self.sets = sets
+    self.reps = reps
+    self.weight = weight
+    self.notes = notes
+
 
 class PlannerApp:
     def __init__(self, root):
