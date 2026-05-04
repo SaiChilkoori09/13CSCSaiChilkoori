@@ -1,7 +1,12 @@
-from tkinter import *
+#Import GUI models
+import tkinter as tk
 
-window = Tk()
-window.geometry ("420x420")
-window.title("FitPlan")
+class PlannerApp:
+    def __init__(self, root):
+        self.root = root
 
-window.mainloop() #place window on computer screen, listen for events
+#For the  title, screen size and background
+        self.root.title("FitPlan")
+        self.root.geometry("1024x600")
+        self.root.configure(bg="#66738b")
+
