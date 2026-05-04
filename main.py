@@ -3,16 +3,6 @@ import tkinter as tk
  from random import setstate
  from tkinter.font import names
 
- COLORS = {
-     'baby_blue': '#9eb5df',
-     'gray_blue': '#66738b',
-     'red': '#d41f1f',
-     'green': '#1fd483',
-     'gray': '#99a1af',
-     'white': '#ffffff',
-     'dark_gray': '#4a5568'
- }
-
 
  class Excercise:
 
