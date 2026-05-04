@@ -13,6 +13,10 @@ label = Label(window,
               bg='#66738b'
               )
 
+button = Button(window,text='GET STARTED')
+button.pack()
+
 label.place(x=0, y=0)
+button.place(x=190,y=160)
 
 window.mainloop()
