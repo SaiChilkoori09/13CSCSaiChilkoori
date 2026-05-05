@@ -1,9 +1,6 @@
- #Import GUI models
-import tkinter as tk
- from random import setstate
- from tkinter.font import names
+from tkinter import *
 
- COLORS = {
+COLORS = {
      'baby_blue': '#9eb5df',
      'gray_blue': '#66738b',
      'red': '#d41f1f',
@@ -13,33 +10,21 @@ import tkinter as tk
      'dark_gray': '#4a5568'
  }
 
+window = Tk()
+window.geometry("420x420")
+window.title("FitPlan")
 
- class Excercise:
+window.config(background='#66738b')
 
+label = Label(window,text="FitPlan",font=('Canva Sans',92,'bold'))
+label = Label(window,text="FitPlan", font=('Canva Sans',92,'bold'), fg='white', bg='#66738b')
 
-    def __init__(self, name, sets, reps. weight, notes=""):
-    self.name = names
-    self.sets = sets
-    self.reps = reps
-    self.weight = weight
-    self.notes = notes
+label.place(x=0, y=0)
 
-    def to_dict(self):
-        return {
-            'name': self.name,
-            'sets': self.sets,
-            'reps': self.reps,
-            'weight': self.weight,
-            'notes': self.notes
-        }
+button = Button(window,text='GET STARTED')
+button.pack()
 
+label.place(x=0, y=0)
+button.place(x=190,y=160)
 
-class PlannerApp:
-    def __init__(self, root):
-        self.root = root
-
-#For the  title, screen size and background
-        self.root.title("FitPlan")
-        self.root.geometry("1024x600")
-        self.root.configure(bg="#66738b")
-
+window.mainloop()
