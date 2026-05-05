@@ -1,30 +1,41 @@
-from tkinter import *
+import tkinter as tk
+from tkinter import ttk, messagebox
+import json
+import os
+from datetime import datetime
+import threading
+import time
 
+# Color palette — define once, use everywhere
 COLORS = {
-     'baby_blue': '#9eb5df',
-     'gray_blue': '#66738b',
-     'red': '#d41f1f',
-     'green': '#1fd483',
-     'gray': '#99a1af',
-     'white': '#ffffff',
-     'dark_gray': '#4a5568'
- }
+    'baby_blue': '#9eb5df',
+    'gray_blue': '#66738b',
+    'red':       '#d41f1f',
+    'green':     '#1fd483',
+    'gray':      '#99a1af',
+    'white':     '#ffffff',
+    'dark_gray': '#4a5568'
+}
 
-window = Tk()
-window.geometry("420x420")
-window.title("FitPlan")
+class HomePage(tk.Frame):
+    def __init__(self, parent):
+        super().__init__(parent, bg=COLORS['gray_blue'])
 
-window.config(background='#66738b')
+        # Title
+        title = tk.Label(self, text='FitPlan',
+            font=('Arial', 64, 'bold'),
+            bg=COLORS['gray_blue'],
+            fg=COLORS['white'])
+        title.pack(pady=(60, 5))
 
-label = Label(window,text="FitPlan",font=('Canva Sans',92,'bold'))
-label = Label(window,text="FitPlan", font=('Canva Sans',92,'bold'), fg='white', bg='#66738b')
 
-label.place(x=0, y=0)
+# Run the window
+window = tk.Tk()
+window.title('FitPlan')
+window.geometry('1000x700')
+window.configure(bg=COLORS['gray_blue'])
 
-button = Button(window,text='GET STARTED')
-button.pack()
-
-label.place(x=0, y=0)
-button.place(x=190,y=160)
+page = HomePage(window)
+page.pack(fill='both', expand=True)
 
 window.mainloop()
