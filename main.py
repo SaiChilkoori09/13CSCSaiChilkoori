@@ -6,7 +6,7 @@ from datetime import datetime
 import threading
 import time
 
-# Color palette — define once, use everywhere
+# Color palette
 COLORS = {
     'baby_blue': '#9eb5df',
     'gray_blue': '#66738b',
@@ -27,6 +27,19 @@ class HomePage(tk.Frame):
             bg=COLORS['gray_blue'],
             fg=COLORS['white'])
         title.pack(pady=(60, 5))
+
+        #subtitle
+        subtitle = tk.Label(self, text='Welcome!',
+            font=('Arial', 24,),
+            bg=COLORS['gray_blue'],
+            fg=COLORS['white'])
+        subtitle.pack(pady=(60, 6))
+
+        subtitle = tk.Label(self, text='Build Workout Programs in Minutes and be healthier!',
+            font=('Arial', 24,),
+            bg=COLORS['gray_blue'],
+            fg=COLORS['white'])
+        subtitle.pack(pady=(60, 7))
 
         #Quote
         quote = tk.Label(self, text='The last three or four reps is what makes the muscle grow.— Arnold Schwarzenegger',
