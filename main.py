@@ -28,10 +28,22 @@ class HomePage(tk.Frame):
             fg=COLORS['white'])
         title.pack(pady=(60, 5))
 
+        #Quote
+        quote = tk.Label(self, text='The last three or four reps is what makes the muscle grow.— Arnold Schwarzenegger',
+            font=('Cinzel', 15),
+            bg=COLORS['gray_blue'],
+            fg = COLORS['white'])
+        quote.pack(pady=(60, 10))
+
+        quote = tk.Label(self, text='"Success isnt always about greatness. Its about consistency." — Dwayne The Rock Johnson"',
+            font=('Cinzel', 15),
+            bg=COLORS['gray_blue'],
+            fg=COLORS['white'])
+        quote.pack(pady=(60, 10))
+
 
 # Run the window
 window = tk.Tk()
-window.title('FitPlan')
 window.geometry('1000x700')
 window.configure(bg=COLORS['gray_blue'])
 
