@@ -28,6 +28,8 @@ class HomePage(tk.Frame):
             fg=COLORS['white'])
         title.pack(pady=(60, 5))
 
+        canvas.create_line(0, 0, 200, 200, fill="#d41f1f", width=3)
+
         #subtitle
         subtitle = tk.Label(self, text='Welcome!',
             font=('Arial', 24,),
@@ -59,6 +61,9 @@ class HomePage(tk.Frame):
 window = tk.Tk()
 window.geometry('1000x700')
 window.configure(bg=COLORS['gray_blue'])
+
+canvas = tk.Canvas(window, width=200, height=200)
+canvas.pack()
 
 page = HomePage(window)
 page.pack(fill='both', expand=True)
