@@ -47,7 +47,7 @@ class HomePage(tk.Frame):
 
         #Quote
         quote = tk.Label(self, text='The last three or four reps is what makes the muscle grow.— Arnold Schwarzenegger',
-            font=('Cinzel', 15),
+            font=(cinzel_font, 15),
             bg=COLORS['gray_blue'],
             fg = COLORS['white'])
         quote.pack(pady=(60, 10))
@@ -60,7 +60,7 @@ class HomePage(tk.Frame):
         start_btn.pack(pady=20)
 
         quote = tk.Label(self, text='"Success isnt always about greatness. Its about consistency." — Dwayne The Rock Johnson"',
-            font=('Cinzel', 15),
+            font=(cinzel_font, 15),
             bg=COLORS['gray_blue'],
             fg=COLORS['white'])
         quote.pack(pady=(60, 10))
