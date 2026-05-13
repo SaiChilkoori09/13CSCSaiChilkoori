@@ -52,6 +52,13 @@ class HomePage(tk.Frame):
             fg = COLORS['white'])
         quote.pack(pady=(60, 10))
 
+        start_btn = tk.Button(self, text='GET STARTED',
+            font=('Arial', 20, 'bold'),
+            bg=COLORS['red'],
+            fg=COLORS['white'],
+            padx=30, pady=15, relief='flat', cursor='hand2')
+        start_btn.pack(pady=20)
+
         quote = tk.Label(self, text='"Success isnt always about greatness. Its about consistency." — Dwayne The Rock Johnson"',
             font=('Cinzel', 15),
             bg=COLORS['gray_blue'],
