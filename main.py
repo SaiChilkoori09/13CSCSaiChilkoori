@@ -28,9 +28,10 @@ class HomePage(tk.Frame):
             fg=COLORS['white'])
         title.pack(pady=(60, 5))
 
-        #line break
-        canvas.create_line((50, 50, 250, 50), fill="#d41f1f", width=3)
-        canvas.pack(pady=(60, 50))
+        # RED LINE under FitPlan title
+        red_line = tk.Frame(self, bg=COLORS['red'], height=3, width=400)
+        red_line.pack(pady=(0, 10))
+        red_line.pack_propagate(False)  # Maintain size
 
         #subtitle
         subtitle = tk.Label(self, text='Welcome!',
@@ -47,7 +48,7 @@ class HomePage(tk.Frame):
 
         #Quote
         quote = tk.Label(self, text='The last three or four reps is what makes the muscle grow.— Arnold Schwarzenegger',
-            font=(cinzel_font, 15),
+            font=('Cinzel', 15),
             bg=COLORS['gray_blue'],
             fg = COLORS['white'])
         quote.pack(pady=(60, 10))
@@ -60,10 +61,37 @@ class HomePage(tk.Frame):
         start_btn.pack(pady=20)
 
         quote = tk.Label(self, text='"Success isnt always about greatness. Its about consistency." — Dwayne The Rock Johnson"',
-            font=(cinzel_font, 15),
+            font=('Cinzel', 15),
             bg=COLORS['gray_blue'],
             fg=COLORS['white'])
         quote.pack(pady=(60, 10))
+
+        # Feature icons row WITH RED VERTICAL LINES
+        features_frame = tk.Frame(self, bg=COLORS['gray_blue'])
+        features_frame.pack(pady=20)
+
+        features = [('Sign Up', '👤'), ('Plan Workouts', '🏋️'), ('Log Sessions', '📖')]
+
+        for i, (feature_text, icon) in enumerate(features):
+            # Feature container
+            c = tk.Frame(features_frame, bg=COLORS['gray_blue'])
+            c.grid(row=0, column=i * 2, padx=40)
+
+            # Icon
+            tk.Label(c, text=icon, font=('Arial', 28),
+                     bg=COLORS['gray_blue'],
+                     fg=COLORS['white']).pack()
+
+            # Feature text
+            tk.Label(c, text=feature_text, font=('Arial', 11, 'bold'),
+                     bg=COLORS['gray_blue'],
+                     fg=COLORS['white']).pack()
+
+            # Red line breaks
+            if i < len(features) - 1:
+                separator = tk.Frame(features_frame, bg=COLORS['red'], width=3, height=80)
+                separator.grid(row=0, column=i * 2 + 1, padx=0)
+                separator.grid_propagate(False)  # Maintain size
 
 
 # Run the window
