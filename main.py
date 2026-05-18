@@ -1,10 +1,11 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, PhotoImage
 import json
 import os
 from datetime import datetime
 import threading
 import time
+from PIL import ImageTk, Image
 
 # Color palette
 COLORS = {
@@ -17,9 +18,17 @@ COLORS = {
     'dark_gray': '#4a5568'
 }
 
+photo = PhotoImage(file="Images/dumbellicon.png")
+
 class HomePage(tk.Frame):
     def __init__(self, parent):
         super().__init__(parent, bg=COLORS['gray_blue'])
+
+        # aspen = Image.open("Images/bookicon.png")
+        # aspen = ImageTk.PhotoImage(aspen)
+        #
+        # my_label = Label(self, image=aspen, bd=2, relied=raised)
+        # my_label.pack(pady=20)
 
         # Title
         title = tk.Label(self, text='FitPlan',
@@ -32,6 +41,14 @@ class HomePage(tk.Frame):
         red_line = tk.Frame(self, bg=COLORS['red'], height=3, width=400)
         red_line.pack(pady=(0, 10))
         red_line.pack_propagate(False)  # Maintain size
+
+        dumbbell = tk.Label(self, image=photo,
+            bg=COLORS['gray_blue']),
+            dumbbell.place(x=0, y=0),
+            dumbbell.pack(pady=(5, 20)),
+            dumbbell.pack(padx=(10, 10))
+        )
+
 
         #subtitle
         subtitle = tk.Label(self, text='Welcome!',
@@ -70,7 +87,7 @@ class HomePage(tk.Frame):
         features_frame = tk.Frame(self, bg=COLORS['gray_blue'])
         features_frame.pack(pady=20)
 
-        features = [('Sign Up', '👤'), ('Plan Workouts', '🏋️'), ('Log Sessions', '📖')]
+        features = [('Sign Up', Image.open("Images/bookicon.png")), ('Plan Workouts', '🏋️'), ('Log Sessions', '📖')]
 
         for i, (feature_text, icon) in enumerate(features):
             # Feature container
