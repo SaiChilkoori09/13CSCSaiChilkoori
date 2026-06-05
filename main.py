@@ -28,7 +28,6 @@ window.configure(bg=COLORS['gray_blue'])
 canvas = tk.Canvas(window, width=200, height= 200, bg=COLORS['gray_blue'], borderwidth=0, highlightthickness=0)
 canvas.pack()
 
-# photo = PhotoImage(file="Images/dumbellicon.png")
 
 
 class HomePage(tk.Frame):
@@ -41,17 +40,6 @@ class HomePage(tk.Frame):
 
     canvas.coords(item, 0, 0)
 
-    # dumbbell = Image.open("Images/dumbellicon.png").resize((200,200))
-    # dumbbell = ImageTk.PhotoImage(dumbbell)
-    #
-    # my_label = canvas.create_image(0, 0, image=dumbbell, anchor="nw")
-    #
-    # canvas.coords(dumbbell, 0, 50)
-    #
-    # my_label = tk.Label(window, image=dumbbell, borderwidth=0, highlightthickness=0)
-    # # my_label.pack(pady=20)
-    # # my_label.pack(padx=750)
-
     # Title
     title = tk.Label(window, text='FitPlan',
         font=('Arial', 64, 'bold'),
@@ -63,13 +51,6 @@ class HomePage(tk.Frame):
     red_line = tk.Frame(window, bg=COLORS['red'], height=3, width=400)
     red_line.pack(pady=(0, 10))
     red_line.pack_propagate(False)  # Maintain size
-
-        # dumbbell = tk.Label(self, image=photo,
-        #     bg=COLORS['gray_blue']),
-        #     dumbbell.place(x=0, y=0),
-        #     dumbbell.pack(pady=(5, 20)),
-        #     dumbbell.pack(padx=(10, 10))
-        # )
 
 
     #subtitle
@@ -131,8 +112,5 @@ class HomePage(tk.Frame):
             separator = tk.Frame(features_frame, bg=COLORS['red'], width=3, height=80)
             separator.grid(row=0, column=i * 2 + 1, padx=0)
             separator.grid_propagate(False)  # Maintain size
-
-# page = HomePage(window)
-# page.pack(fill='both', expand=True)
 
 window.mainloop()
