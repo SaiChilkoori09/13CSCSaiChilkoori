@@ -34,11 +34,20 @@ class HomePage(tk.Frame):
     def __init__(window, parent):
         super().__init__(parent, bg=COLORS['gray_blue'])
 
-    img = tk.PhotoImage(file="Images/dumbellicon.png")
+    # img = tk.PhotoImage(file="Images/dumbellicon.png")
+    #
+    # item = canvas.create_image(0, 0, image=img, anchor="nw")
+    # item.place(padx=200)
+    # item.place(pady=200)
 
-    item = canvas.create_image(0, 0, image=img, anchor="nw")
+    dumbbell = Image.open("Images/dumbellicon.png").resize((200,200))
+    dumbbell = ImageTk.PhotoImage(dumbbell)
 
-    canvas.coords(item, 0, 0)
+    my_label = tk.Label(window, image=dumbbell, borderwidth=0, highlightthickness=0)
+    my_label.place(padx=50)
+    my_label.place(pady=200)
+
+
 
     # Title
     title = tk.Label(window, text='FitPlan',
@@ -86,31 +95,31 @@ class HomePage(tk.Frame):
     #     fg=COLORS['white'])
     # quote.pack(pady=(60, 10))
 
-    # Feature icons row WITH RED VERTICAL LINES
-    features_frame = tk.Frame(window, bg=COLORS['gray_blue'])
-    features_frame.pack(pady=20)
-
-    features = [('Sign Up', Image.open("Images/bookicon.png")), ('Plan Workouts', '🏋️'), ('Log Sessions', '📖')]
-
-    for i, (feature_text, icon) in enumerate(features):
-        # Feature container
-        c = tk.Frame(features_frame, bg=COLORS['gray_blue'])
-        c.grid(row=0, column=i * 2, padx=40)
-
-        # Icon
-        tk.Label(c, text=icon, font=('Arial', 28),
-                    bg=COLORS['gray_blue'],
-                    fg=COLORS['white']).pack()
-
-        # Feature text
-        tk.Label(c, text=feature_text, font=('Arial', 11, 'bold'),
-                    bg=COLORS['gray_blue'],
-                    fg=COLORS['white']).pack()
-
-        # Red line breaks
-        if i < len(features) - 1:
-            separator = tk.Frame(features_frame, bg=COLORS['red'], width=3, height=80)
-            separator.grid(row=0, column=i * 2 + 1, padx=0)
-            separator.grid_propagate(False)  # Maintain size
+    # # Feature icons row WITH RED VERTICAL LINES
+    # features_frame = tk.Frame(window, bg=COLORS['gray_blue'])
+    # features_frame.pack(pady=20)
+    #
+    # features = [('Sign Up', Image.open("Images/bookicon.png")), ('Plan Workouts', '🏋️'), ('Log Sessions', '📖')]
+    #
+    # for i, (feature_text, icon) in enumerate(features):
+    #     # Feature container
+    #     c = tk.Frame(features_frame, bg=COLORS['gray_blue'])
+    #     c.grid(row=0, column=i * 2, padx=40)
+    #
+    #     # Icon
+    #     tk.Label(c, text=icon, font=('Arial', 28),
+    #                 bg=COLORS['gray_blue'],
+    #                 fg=COLORS['white']).pack()
+    #
+    #     # Feature text
+    #     tk.Label(c, text=feature_text, font=('Arial', 11, 'bold'),
+    #                 bg=COLORS['gray_blue'],
+    #                 fg=COLORS['white']).pack()
+    #
+    #     # Red line breaks
+    #     if i < len(features) - 1:
+    #         separator = tk.Frame(features_frame, bg=COLORS['red'], width=3, height=80)
+    #         separator.grid(row=0, column=i * 2 + 1, padx=0)
+    #         separator.grid_propagate(False)  # Maintain size
 
 window.mainloop()
